@@ -37,11 +37,12 @@ public final class CollatzUtils {
      */
     public static long stepsFor(long value) {
         if (value < 1) {
-            throw new IllegalArgumentException("value must be greater than 0.");
+            throw new IllegalArgumentException("Input must be greater than 0.");
         }
         final AtomicLong c = new AtomicLong();
         LongStream.iterate(value, (v) -> c.incrementAndGet() > 0 && v % 2 == 0 ? v / 2 : 3 * v + 1)
                 .anyMatch(v -> c.longValue() > 1 && v == 1);
         return c.decrementAndGet();
     }
+
 }
