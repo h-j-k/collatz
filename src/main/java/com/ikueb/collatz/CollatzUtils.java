@@ -5,6 +5,13 @@ import java.util.stream.LongStream;
 
 /**
  * Utilities class for deriving number of steps using the Collatz conjecture.
+ * <p>
+ * Given a number <code>n</code>:
+ * <ul>
+ * <li>If <code>n</code> is even, repeat for value <code>n / 2</code>.</li>
+ * <li>If <code>n</code> is odd, repeat for value <code>3 * n + 1</code>.</li>
+ * <li>Repeat until <code>n = 1</code>.</li>
+ * </ul>
  */
 public final class CollatzUtils {
 
@@ -33,7 +40,7 @@ public final class CollatzUtils {
             throw new IllegalArgumentException("value must be greater than 0.");
         }
         final AtomicLong c = new AtomicLong();
-        LongStream.iterate(value, (v) -> c.incrementAndGet() > 0 && v % 2 == 0 ? v / 2 : 1 + 3 * v)
+        LongStream.iterate(value, (v) -> c.incrementAndGet() > 0 && v % 2 == 0 ? v / 2 : 3 * v + 1)
                 .anyMatch(v -> c.longValue() > 1 && v == 1);
         return c.decrementAndGet();
     }
