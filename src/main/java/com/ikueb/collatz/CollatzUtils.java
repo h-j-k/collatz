@@ -10,7 +10,7 @@ import java.util.stream.LongStream;
  * <ul>
  * <li>If <code>n</code> is even, repeat for value <code>n / 2</code>.</li>
  * <li>If <code>n</code> is odd, repeat for value <code>3 * n + 1</code>.</li>
- * <li>Repeat until <code>n = 1</code>.</li>
+ * <li>Repeat indefinitely, the conjecture is that <code>n = 1</code> eventually.</li>
  * </ul>
  */
 public final class CollatzUtils {
