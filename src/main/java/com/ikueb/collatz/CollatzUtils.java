@@ -40,7 +40,7 @@ public final class CollatzUtils {
      * @throws IllegalArgumentException if <code>value</code> is 0 or less.
      */
     public static long stepsFor(long value) {
-        if (value < 1) {
+        if (value <= 0) {
             throw new IllegalArgumentException("Input must be greater than 0.");
         }
         final long[] result = new long[1];
