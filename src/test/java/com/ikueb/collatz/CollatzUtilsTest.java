@@ -27,13 +27,13 @@ public class CollatzUtilsTest {
     @DataProvider(name = "test-cases")
     public Iterator<Object[]> getTestCases() {
         return Arrays.stream(TestCase.values())
-                .map((current) -> new Object[] { current.value, current.expected }).iterator();
+                .map(test -> new Object[] { test.value, test.expected }).iterator();
     }
 
     @DataProvider(name = "twos-test-cases")
     public Iterator<Object[]> getTwosTestCases() {
         return LongStream.range(1, 61).boxed()
-                .map((v) -> new Object[] { Long.valueOf((long) Math.pow(2, v.doubleValue())), v })
+                .map(v -> new Object[] { Long.valueOf((long) Math.pow(2, v.doubleValue())), v })
                 .iterator();
     }
 
