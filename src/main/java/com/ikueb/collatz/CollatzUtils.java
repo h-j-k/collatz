@@ -43,10 +43,10 @@ public final class CollatzUtils {
         if (value < 1) {
             throw new IllegalArgumentException("Input must be greater than 0.");
         }
-        final long[] counter = new long[1];
-        LongStream.iterate(value, v -> ++counter[0] > 0 && v % 2 == 0 ? v / 2 : 3 * v + 1)
-                .anyMatch(v -> counter[0] > 1 && v == 1);
-        return --counter[0];
+        final long[] result = new long[1];
+        LongStream.iterate(value, v -> ++result[0] > 0 && v % 2 == 0 ? v / 2 : 3 * v + 1).anyMatch(
+                v -> v == 1 && result[0] > v);
+        return --result[0];
     }
 
 }
