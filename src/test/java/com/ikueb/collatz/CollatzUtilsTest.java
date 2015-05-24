@@ -71,5 +71,4 @@ public class CollatzUtilsTest {
     public void testIllegalArgumentException() {
         CollatzUtils.stepsFor(0);
     }
-
 }

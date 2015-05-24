@@ -62,5 +62,4 @@ public final class CollatzUtils {
                     .anyMatch(v -> v == 1 && result[0] > v);
         return --result[0];
     }
-
 }
